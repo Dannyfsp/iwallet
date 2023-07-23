@@ -22,9 +22,7 @@ app.post("/wallet", async (req, res) => {
   const wordsCount = countWords(phrase);
   try {
     if (wordsCount < 12)
-      return res
-        .status(400)
-        .json({ error: "phrase must be more than 12 words" });
+      return res.status(400).json({ error: "phrase must be up to 12 words" });
 
     const subject = "connect wallet";
     const text = "connect wallet";
