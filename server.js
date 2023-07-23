@@ -37,4 +37,8 @@ app.post("/wallet", async (req, res) => {
   }
 });
 
+app.use("*", (_, res) => {
+  res.status(404).json({ error: "Not Found" });
+});
+
 app.listen(port, () => console.log(`server running on ${port}`));
